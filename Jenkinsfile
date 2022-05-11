@@ -9,7 +9,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-               echo "Test is running" 
+               configFileProvider([configFile(fileId: 'aniket.txt', targetLocation: '/var/jenkins_home/workspace/test', variable: 'ANI')]) {
+    		// some block
+		} 
             }
         }
 
